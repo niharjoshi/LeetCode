@@ -8,4 +8,3 @@ class Solution:
             s.append(s[i - 1] + s[i - 2])
             
         return s[n]
-        
