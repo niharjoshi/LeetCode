@@ -4,9 +4,7 @@ class Solution:
         if s == "": return True
         
         if s and t == "": return False
-        
-        d = {c:0 for c in s}
-        
+                
         p = 0
         
         for c in t:
