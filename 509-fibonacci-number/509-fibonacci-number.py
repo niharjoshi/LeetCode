@@ -1,13 +1,14 @@
 class Solution:
     def fib(self, n: int) -> int:
         
-        f = []
+        if n == 0: return 0
         
-        f.append(0)
-        f.append(1)
+        if n == 1: return 1
+        
+        ans = [0, 1]
         
         for i in range(2, n + 1):
             
-            f.append(f[i - 1] + f[i - 2])
+            ans.append(ans[i - 2] + ans[i - 1])
             
-        return f[n]
+        return ans[n]
