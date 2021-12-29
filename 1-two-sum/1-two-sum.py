@@ -3,16 +3,13 @@ class Solution:
         
         if nums == []: return []
                 
-        for i in range(0, len(nums) - 1):
+        dp = {}
+        
+        for i in range(0, len(nums)):
             
             req = target - nums[i]
             
-            for j in range(i + 1, len(nums)):
-                
-                if nums[j] != req:
-                    
-                    continue
-                
-                elif nums[j] == req:
-                    
-                    return [i, j]
+            if req in dp:
+                return [i, dp[req]]
+            
+            dp[nums[i]] = i
