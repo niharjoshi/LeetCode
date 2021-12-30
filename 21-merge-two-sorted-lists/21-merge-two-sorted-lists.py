@@ -29,3 +29,4 @@ class Solution:
         ans.next = list1 or list2
         
         return dummy.next
+    
