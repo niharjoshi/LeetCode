@@ -3,6 +3,9 @@ class Solution:
         
         n, m = len(s), len(t)
         
+        if n != m:
+            return False
+        
         if n == 1 and m == 1:
             return s == t
         
