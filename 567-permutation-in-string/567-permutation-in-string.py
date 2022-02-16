@@ -8,15 +8,6 @@ class Solution:
         
         if m > m: return False
         
-        def createIndex(str: string) -> dict:
-            index = {}
-            for c in str:
-                if c not in index:
-                    index[c] = 1
-                else:
-                    index[c] += 1
-            return index
-        
         s1_hash = sum([hash(i) for i in s1])
         
         for i in range(0, m):
