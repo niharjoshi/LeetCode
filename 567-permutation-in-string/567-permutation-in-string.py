@@ -12,6 +12,8 @@ class Solution:
         
         for i in range(0, m):
              if i + n <= m:
+                if s2[i] not in s1:
+                    continue
                 s2_hash = sum([hash(j) for j in s2[i:i + n]])
                 if s2_hash == s1_hash:
                     return True
