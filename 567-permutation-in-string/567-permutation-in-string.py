@@ -8,13 +8,11 @@ class Solution:
         
         if m > m: return False
         
-        s1_hash = sum([hash(i) for i in s1])
+        s1_hash = Counter(s1)
         
         for i in range(0, m):
              if i + n <= m:
-                if s2[i] not in s1:
-                    continue
-                s2_hash = sum([hash(j) for j in s2[i:i + n]])
+                s2_hash = Counter(s2[i:i + n])
                 if s2_hash == s1_hash:
                     return True
         
