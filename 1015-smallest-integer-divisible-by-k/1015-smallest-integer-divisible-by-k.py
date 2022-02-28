@@ -21,10 +21,6 @@ class Solution:
         
         remainder = -1
         
-        while n < k:
-            n = n * 10 + 1
-            n_counter += 1
-        
         for i in range(k):
             
             remainder = n % k
