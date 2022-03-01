@@ -25,4 +25,3 @@ class Solution:
                 res.append(index[k])
         
         return res
-        
