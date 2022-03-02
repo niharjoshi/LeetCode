@@ -4,30 +4,28 @@ class Solution:
         if len(chars) == 1:
             return 1
         
-        curr = chars[0]
-        count = 1
         ans = ""
+        count = 0
+        curr = chars[0]
         
-        for i, c in enumerate(chars[1:]):
+        for c in chars:
             
             if c == curr:
                 count += 1
             else:
                 ans += curr
-                if count > 1:
-                    ans += str(count)
                 curr = c
-                count = 1
-            if i == len(chars) - 2:
-                ans += c
                 if count > 1:
                     ans += str(count)
+                count = 1
         
+        ans += curr
+        if count > 1:
+            ans += str(count)
         
-        for i, c in enumerate(ans):
+        for i in range(len(ans)):
             chars.insert(i, ans[i])
         
         chars = chars[:len(ans)]
         
         return len(chars)
-        
