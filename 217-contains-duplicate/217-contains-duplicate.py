@@ -1,5 +1,14 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         
-        nums_set = set(nums)
-        return False if len(nums_set) == len(nums) else True
+        if len(nums) == 0 or len(nums) == 1:
+            return False
+        
+        visited = {}
+        
+        for item in nums:
+            if item in visited.keys():
+                return True
+            visited[item] = 1
+        
+        return False
