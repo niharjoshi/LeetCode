@@ -7,7 +7,11 @@ class Solution:
 
             mid = (left + right) // 2
 
-            if nums[left] == nums[mid] or nums[right] == nums[mid]:
+            if nums[left] < nums[mid] < nums[right]:
+                return nums[left]
+            elif nums[left] > nums[mid] > nums[right]:
+                return nums[right]
+            elif nums[left] == nums[mid] or nums[right] == nums[mid]:
                 return min(nums[left], nums[right])
             elif nums[left] < nums[mid] < nums[right]:
                 return nums[left]
