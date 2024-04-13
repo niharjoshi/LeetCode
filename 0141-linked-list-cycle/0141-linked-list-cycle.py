@@ -7,16 +7,25 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
 
-        if not head:
+        def solution1():
+            if not head:
+                return False
+            slow = head
+            fast = head.next
+            while fast and fast.next:
+                if slow == fast:
+                    return True
+                slow = slow.next
+                fast = fast.next.next
             return False
-        
-        slow = head
-        fast = head.next
 
-        while fast and fast.next:
-            if slow == fast:
+        # def solution2(start):
+        visited = set()
+        while head:
+            if head in visited:
                 return True
-            slow = slow.next
-            fast = fast.next.next
-        
+            visited.add(head)
+            head = head.next
         return False
+        
+        # solution2(head)
